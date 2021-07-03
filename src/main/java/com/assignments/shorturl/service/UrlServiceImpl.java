@@ -119,13 +119,12 @@ public class UrlServiceImpl implements UrlService {
      */
     private UrlEntity getUrlEntity(Long id) {
 
-        UrlEntity urlEntity = urlRepository.findById(id).get();
-        if (urlEntity != null) {
-            //Increasing usage Counter
-            urlEntity.setUsageCount(urlEntity.getUsageCount() + 1);
-            return urlRepository.save(urlEntity);
-        } else {
-            throw new NoSuchElementException();
-        }
+        UrlEntity urlEntity = urlRepository.findById(id).orElseThrow(() -> new NoSuchElementException("No suchUrl Entity Found"));
+
+        //Increasing usage Counter
+        urlEntity.setUsageCount(urlEntity.getUsageCount() + 1);
+        return urlRepository.save(urlEntity);
+
+
     }
 }
