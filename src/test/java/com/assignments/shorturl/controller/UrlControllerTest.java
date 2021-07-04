@@ -40,7 +40,7 @@ class UrlControllerTest {
         when(mockUrlService.shortenUrl(originalUrl)).thenReturn(urlEntity1);
 
         // Run the test
-        final ResponseEntity<Object> result = urlControllerUnderTest.shortenUrl(urlEntity);
+        final ResponseEntity<?> result = urlControllerUnderTest.shortenUrl(urlEntity);
 
         // Verify the results
         assertEquals(urlEntity1,result.getBody());
@@ -69,7 +69,7 @@ class UrlControllerTest {
         when(mockUrlService.getAllUrls()).thenReturn(urlDto);
 
         // Run the test
-        final ResponseEntity<Object> result = urlControllerUnderTest.getAllUrls();
+        final ResponseEntity<?> result = urlControllerUnderTest.getAllUrls();
 
         // Verify the results
         assertEquals(urlDto,result.getBody());

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.NoSuchElementException;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Slf4j
 @RestController
 @RequestMapping
@@ -28,7 +29,7 @@ public class UrlController {
      * @throws UrlShorterException
      */
     @PostMapping("/shorten")
-    public ResponseEntity<Object> shortenUrl(@RequestBody UrlEntity urlEntity) throws UrlShorterException {
+    public ResponseEntity<?> shortenUrl(@RequestBody UrlEntity urlEntity) throws UrlShorterException {
         return ResponseEntity.ok().body(urlService.shortenUrl(urlEntity.getOriginalUrl()));
     }
 
@@ -37,7 +38,7 @@ public class UrlController {
      * @return all Shortened urls, its respective original url along with the usage count
      */
     @GetMapping("/urls")
-    public ResponseEntity<Object> getAllUrls() {
+    public ResponseEntity<?> getAllUrls() {
         return ResponseEntity.ok().body(urlService.getAllUrls());
     }
 

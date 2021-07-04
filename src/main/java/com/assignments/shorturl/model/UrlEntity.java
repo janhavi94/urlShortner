@@ -13,7 +13,6 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class UrlEntity {
     /**
