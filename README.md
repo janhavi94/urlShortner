@@ -13,5 +13,8 @@ $ git clone https://github.com/janhavi94/urlShortner.git
 - Build Spring project 
 - Open localhost:8080/swagger-ui.html to see endpoints.
 
+Configure Lombok :
+https://www.baeldung.com/lombok-ide
+
 
 
