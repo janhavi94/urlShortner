@@ -5,6 +5,7 @@ This is an API for Url shortener service like tiny url.
 Url shortener is service that converts long urls into short urls. When user opens short url, it will be automatically redirected to original (long) url. It will also be shown all existing short URLs and the number of times it was used.
 
 How to use
+
 With Docker and docker-compose:
 $ git clone https://github.com/AnteMarin/UrlShortener-API.git
 $ cd UrlShortener-API 
